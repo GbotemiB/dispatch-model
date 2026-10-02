@@ -1,0 +1,16 @@
+import pypsa
+
+n = pypsa.Network()
+
+n.add("Bus", "gen_bus", carrier="transmission")
+n.add("Bus", "load_bus")
+n.add("Load", "load_1", bus="load_bus", p_set=500)
+
+n.add(
+	"link",
+	"transmission",
+	bus0="gen_bus",
+	bus1="load_bus",
+	efficiency=0.93,
+	p_nom=1000,
+)
