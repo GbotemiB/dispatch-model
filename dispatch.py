@@ -7,7 +7,7 @@ n.add("Bus", "load_bus")
 n.add("Load", "load_1", bus="load_bus", p_set=500)
 
 n.add(
-	"links",
+	"Link",
 	"transmission",
 	bus0="gen_bus",
 	bus1="load_bus",
@@ -22,6 +22,15 @@ n.add(
 	p_nom=700,
 	marginal_cost=3
 		
+)
+
+n.add(
+    "Generator",
+    "solar",
+    bus="gen_bus",
+    p_nom=100,
+    marginal_cost=0,
+    p_max_pu=0.5,
 )
 
 n.optimize()
