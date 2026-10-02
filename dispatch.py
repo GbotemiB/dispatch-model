@@ -15,14 +15,14 @@ n.add(
 	p_nom=1000,
 )
 
-n.add(
-	"Generator",
-	"coal",
-	bus="gen_bus",
-	p_nom=700,
-	marginal_cost=3
-		
-)
+#n.add(
+#	"Generator",
+#	"coal",
+#	bus="gen_bus",
+#	p_nom=700,
+#	marginal_cost=3
+#		
+#)
 
 n.optimize()
 print(n.generators_t.p)
